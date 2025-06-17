@@ -109,19 +109,3 @@ local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 local player = Players.LocalPlayer
 
--- Time to wait in seconds (60 seconds = 1 minute)
-local waitTime = 180
-
--- After waitTime, kick the player with the specified message
-delay(waitTime, function()
-    -- Show a popup message before kicking
-    StarterGui:SetCore("ChatMakeSystemMessage", {
-        Text = "[System]: Server is full, please try again later.";
-        Color = Color3.new(1, 0, 0);
-        Font = Enum.Font.SourceSansBold;
-        FontSize = Enum.FontSize.Size24;
-    })
-    wait(1) -- short delay to allow message to show
-
-    player:Kick("Server full, please try again later.")
-end)
